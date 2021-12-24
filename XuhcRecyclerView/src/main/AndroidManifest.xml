@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xuhc.xuhcrecyclerview">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <activity android:name=".RecyclerViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 纵向布局 -->
+        <activity
+            android:name=".vertical.VerticalActivity"
+            android:label="纵向布局" />
+
+        <!-- 横向布局 -->
+        <activity
+            android:name=".horizontal.HorizontalActivity"
+            android:label="横向布局" />
+
+        <!-- 网格布局 -->
+        <activity
+            android:name=".grid.GridActivity"
+            android:label="网格布局"/>
+
+        <!-- Item 点击 -->
+        <activity
+            android:name=".click.RvClickActivity"
+            android:label="Item 点击" />
+
+        <!-- 分组 -->
+        <activity
+            android:name=".group.GroupActivity"
+            android:label="分组"/>
+
+        <!-- 顶部悬浮 -->
+        <activity
+            android:name=".sticky.StickyActivity"
+            android:label="顶部悬浮"/>
+
+        <!-- Item 拖动 -->
+        <activity
+            android:name=".drag.DragActivity"
+            android:label="Item 拖动"/>
+
+        <!-- 滑动删除 -->
+        <activity
+            android:name=".swipe.SwipeActivity"
+            android:label="滑动删除"/>
+
+        <!-- 下拉刷新 -->
+        <activity
+            android:name=".refresh.RefreshActivity"
+            android:label="下拉刷新"/>
+
+        <!-- 上拉加载 -->
+        <activity
+            android:name=".load.LoadActivity"
+            android:label="上拉加载"/>
+
+        <!-- 双向滑动 -->
+        <activity
+            android:name=".slide.SlideActivity"
+            android:label="双向滑动"/>
+
+        <!-- RecyclerView item 居中对齐 -->
+        <activity
+            android:name=".snaphelper.SnapHelperActivity"
+            android:label="RecyclerView item 居中对齐"/>
+
+        <!-- 展开和收缩 -->
+        <activity
+            android:name=".expandcollapse.ExpandCollapseActivity"
+            android:label="展开和收缩"/>
+
+        <!-- 瀑布流 -->
+        <activity
+            android:name=".waterfall.WaterfallActivity"
+            android:label="瀑布流"/>
+
+        <!-- 时间轴 -->
+        <activity
+            android:name=".timeline.TimelineActivity"
+            android:label="时间轴"/>
+
+        <!-- 为 RecyclerView 添加 Footer -->
+        <activity
+            android:name=".footer.FooterActivity"
+            android:label="为 RecyclerView 添加 Footer"/>
+
+        <!-- 为 RecyclerView 添加 Header -->
+        <activity
+            android:name=".header.HeaderActivity"
+            android:label="为 RecyclerView 添加 Header"/>
+
+        <!-- 左右联动 -->
+        <activity
+            android:name=".link.LinkActivity"
+            android:label="左右联动"/>
+
+    </application>
+
+</manifest>

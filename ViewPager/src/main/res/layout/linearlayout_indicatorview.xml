@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_indicatorview"
+        android:clickable="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/indicator_run"
+        android:layout_width="11dp"
+        android:layout_height="7dp"
+        android:background="@drawable/indicator_select" />
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="XLBottomView">
+        <!--正常状态的颜色-->
+        <attr format="color" name="normal_color"/>
+        <!--选中状态的颜色-->
+        <attr format="color" name="select_color"/>
+        <!--两端是否给间距-->
+        <attr format="boolean" name="hasLeftOrRightSize"/>
+        <!--item的大小-->
+        <attr format="integer" name="item_size"/>
+        <!--item的布局-->
+        <attr format="reference" name="item_layout"/>
+        <!--按钮选中状态被点击是否响应事件-->
+        <attr format="boolean" name="isSelectClick"/>
+    </declare-styleable>
+
+    <declare-styleable name="XLDrawBoard">
+        <!--背景颜色-->
+        <attr format="color" name="bg_color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MySeekBar">
+        <!--线条的宽度-->
+        <attr format="integer" name="lineSize"/>
+        <!--背景线条的颜色-->
+        <attr format="color" name="lineColorBg"/>
+        <!--进度线条的颜色-->
+        <attr format="color" name="lineColorProgress"/>
+        <!--进度的样式-->
+        <attr format="enum" name="lineStyle">
+            <enum name="PROGRESS" value="0"/>
+            <enum name="SLIDE" value="1"/>
+        </attr>
+        <!--当前的进度-->
+        <attr format="integer" name="currentProgress"/>
+        <!--最大的进度-->
+        <attr format="integer" name="maxProgress"/>
+    </declare-styleable>
+
+</resources>

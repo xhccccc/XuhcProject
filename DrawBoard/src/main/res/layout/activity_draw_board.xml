@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#44cccccc"
+    tools:context=".DrawBoardActivity">
+
+    <!--画笔大小控制器-->
+    <com.xuhc.drawboard.view.XLSeekBar
+        android:id="@+id/size_controller"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#ffffff"
+        android:layout_above="@+id/bottom_view"
+        />
+
+    <!--画板-->
+    <com.xuhc.drawboard.view.XLDrawBoard
+        android:id="@+id/draw_board"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toStartOf="@id/color_controller"
+        android:layout_toEndOf="@+id/size_controller"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/bottom_view"/>
+
+    <!--颜色控制器-->
+    <include
+        layout="@layout/color_layout"
+        android:id="@+id/color_controller"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/bottom_view"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp" />
+
+    <!--底部控制器-->
+    <com.xuhc.drawboard.view.XLBottomView
+        android:id="@+id/bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/bottom_view_bg"
+        android:layout_alignParentBottom="true"
+        app:hasLeftOrRightSize="true"
+        app:isSelectClick="true"
+        app:item_size="60"
+        />
+
+</RelativeLayout>

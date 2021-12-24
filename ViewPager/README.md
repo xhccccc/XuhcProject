@@ -1,0 +1,3 @@
+主要用于ViewPager的简单使用记录
+
+包含fragment，圆点指示器等

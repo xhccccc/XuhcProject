@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="control_bar_bg_width">57dp</dimen>
+    <dimen name="control_bar_bg_height">267dp</dimen>
+    <dimen name="control_bar_content_margin_tb">13dp</dimen>
+    <dimen name="control_bar_content_margin_se">10dp</dimen>
+    <dimen name="control_bar_item_width">37dp</dimen>
+    <dimen name="control_bar_item_height">37dp</dimen>
+    <dimen name="control_bar_item_margin_top">13dp</dimen>
+    <dimen name="control_bar_item_x">11dp</dimen>
+</resources>

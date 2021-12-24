@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xuhc.viewpager2">
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity android:name=".withRadioGroup.RgActivity" />
+        <activity android:name=".withTab.TabActivity" />
+        <activity android:name=".vertical.VerticalActivity" />
+        <activity android:name=".horizontal.HorizontalActivity" />
+        <activity android:name=".ViewPager2Activity"/>
+    </application>
+
+</manifest>
