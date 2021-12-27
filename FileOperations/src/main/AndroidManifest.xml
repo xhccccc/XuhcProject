@@ -3,8 +3,9 @@
     package="com.xuhc.fileoperations">
 
     <application>
-        <activity android:name=".FilePathActivity"></activity>
+        <activity android:name=".FilePathActivity" />
         <activity android:name=".FileOperationsActivity" />
+        <activity android:name=".FileActivity" />
     </application>
 
 </manifest>

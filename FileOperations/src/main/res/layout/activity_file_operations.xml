@@ -23,6 +23,13 @@
                 android:textAllCaps="false"
                 android:text="获取路径"/>
 
+            <Button
+                android:id="@+id/file_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="简单文件存储读取操作"/>
+
         </LinearLayout>
 
 

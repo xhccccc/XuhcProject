@@ -11,10 +11,13 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.xhc.xhcnote.NoteMainActivity;
+import com.xuhc.broadcast.CustomBroadcastActivity;
+import com.xuhc.contentresolver.ContentResolverActivity;
 import com.xuhc.drawboard.DrawBoardActivity;
 import com.xuhc.fileoperations.FileOperationsActivity;
 import com.xuhc.floatingwindow.FloatWindowActivity;
 import com.xuhc.fragment.FragmentTestActivity;
+import com.xuhc.notificationtry.NotificationActivity;
 import com.xuhc.permission.PermissionActivity;
 import com.xuhc.viewpager.ViewPagerActivity;
 import com.xuhc.viewpager2.ViewPager2Activity;
@@ -58,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
         mList.add("ViewPager2");
         mList.add("XuhcNote");
         mList.add("文件操作相关");
+        mList.add("简单发送通知");
+        mList.add("内容提供者查询（查询XuhcNote的提供）");
+        mList.add("自定义广播");
     }
 
     private void initView() {
@@ -104,6 +110,15 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 break;
             case 8:
                 startActivity(new Intent(this, FileOperationsActivity.class));
+                break;
+            case 9:
+                startActivity(new Intent(this, NotificationActivity.class));
+                break;
+            case 10:
+                startActivity(new Intent(this, ContentResolverActivity.class));
+                break;
+            case 11:
+                startActivity(new Intent(this, CustomBroadcastActivity.class));
                 break;
         }
     }

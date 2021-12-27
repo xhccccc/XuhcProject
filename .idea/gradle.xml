@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Broadcast" />
+            <option value="$PROJECT_DIR$/ContentResolver" />
+            <option value="$PROJECT_DIR$/DrawBoard" />
+            <option value="$PROJECT_DIR$/FileOperations" />
+            <option value="$PROJECT_DIR$/FloatingWindow" />
+            <option value="$PROJECT_DIR$/Fragment" />
+            <option value="$PROJECT_DIR$/NotificationTry" />
+            <option value="$PROJECT_DIR$/Permission" />
+            <option value="$PROJECT_DIR$/ViewPager" />
+            <option value="$PROJECT_DIR$/ViewPager2" />
+            <option value="$PROJECT_DIR$/XuhcNote" />
+            <option value="$PROJECT_DIR$/XuhcRecyclerView" />
+            <option value="$PROJECT_DIR$/app" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

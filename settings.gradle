@@ -1,3 +1,6 @@
+include ':Broadcast'
+include ':ContentResolver'
+include ':NotificationTry'
 include ':FileOperations'
 include ':XuhcNote'
 include ':ViewPager2'

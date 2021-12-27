@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xuhc.notificationtry">
+
+    <application>
+        <activity android:name=".NotificationContentActivity"></activity>
+        <activity android:name=".NotificationActivity" />
+    </application>
+
+</manifest>
