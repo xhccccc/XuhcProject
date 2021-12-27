@@ -19,6 +19,7 @@ import com.xuhc.floatingwindow.FloatWindowActivity;
 import com.xuhc.fragment.FragmentTestActivity;
 import com.xuhc.notificationtry.NotificationActivity;
 import com.xuhc.permission.PermissionActivity;
+import com.xuhc.sharedpreferenceutil.SharedPreferenceTryActivity;
 import com.xuhc.viewpager.ViewPagerActivity;
 import com.xuhc.viewpager2.ViewPager2Activity;
 import com.xuhc.xuhcrecyclerview.RecyclerViewActivity;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
         mList.add("简单发送通知");
         mList.add("内容提供者查询（查询XuhcNote的提供）");
         mList.add("自定义广播");
+        mList.add("SharePreferenceUtil");
     }
 
     private void initView() {
@@ -119,6 +121,9 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 break;
             case 11:
                 startActivity(new Intent(this, CustomBroadcastActivity.class));
+                break;
+            case 12:
+                startActivity(new Intent(this, SharedPreferenceTryActivity.class));
                 break;
         }
     }

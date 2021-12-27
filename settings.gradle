@@ -1,3 +1,4 @@
+include ':SharedPreferenceUtil'
 include ':Broadcast'
 include ':ContentResolver'
 include ':NotificationTry'
