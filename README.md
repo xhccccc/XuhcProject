@@ -13,6 +13,6 @@
 10.【FileOperations】: 文件操作相关，常用的存储地址，简易文件存储读取  
 11.【NotificationTry】: 简易的通知发送，点击后跳转到指定页面  
 12.【ContentResolver】: 简易内容提供查询，查询XuhcNote的便签内容（XuhcNote做的提供），一般是跨应用使用  
-13.【Broadcast】: 简易自定义广播
-14.【SharePreferenceUtil】: SharePreference工具类，存储int，string，boolean，List<>类型
-
+13.【Broadcast】: 简易自定义广播  
+14.【SharePreferenceUtil】: SharePreference工具类，存储int，string，boolean，List<>类型  
+15.【Threads】多线程简单实例，有Thread，Runnable，Handle, HandleThread, MyIntentService, ThreadPool等使用

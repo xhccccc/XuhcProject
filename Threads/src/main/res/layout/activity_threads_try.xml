@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThreadsTryActivity">
+
+    <Button
+        android:id="@+id/bt_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Thread"/>
+
+    <Button
+        android:id="@+id/bt_runnable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_below="@+id/bt_thread"
+        android:text="Runnable"/>
+
+    <Button
+        android:id="@+id/bt_handle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_below="@+id/bt_runnable"
+        android:text="Handle"/>
+
+    <Button
+        android:id="@+id/bt_handle_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_below="@+id/bt_handle"
+        android:text="HandleThread"/>
+
+    <Button
+        android:id="@+id/bt_my_intent_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_below="@+id/bt_handle_thread"
+        android:text="MyIntentService"/>
+
+    <Button
+        android:id="@+id/bt_thread_pool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_below="@+id/bt_my_intent_service"
+        android:text="ThreadPool"/>
+
+
+</RelativeLayout>

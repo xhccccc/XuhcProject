@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xuhc.threads">
+
+    <application>
+        <activity android:name=".ThreadPoolTryActivity" />
+        <activity android:name=".MyIntentServiceActivity" />
+        <activity android:name=".HandleThreadActivity" />
+        <activity android:name=".HandleActivity" />
+        <activity android:name=".RunnableActivity" />
+        <activity android:name=".ThreadActivity" />
+        <activity android:name=".ThreadsTryActivity" />
+
+        <service android:name=".MyIntentService">
+            <intent-filter>
+                <action android:name="cn.scu.finch" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

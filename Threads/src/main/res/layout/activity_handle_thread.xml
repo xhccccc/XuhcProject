@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".HandleThreadActivity">
+
+
+    <TextView
+        android:id="@+id/tv_handle_thread"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试结果" />
+
+    <Button
+        android:id="@+id/bt_handle_thread1"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/tv_handle_thread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击延迟1s + 显示我爱学习"/>
+
+    <Button
+        android:id="@+id/bt_handle_thread2"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/bt_handle_thread1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击延迟3s + 显示我不爱学习"/>
+
+    <Button
+        android:id="@+id/bt_handle_thread3"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/bt_handle_thread2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="结束线程的消息循环"/>
+</RelativeLayout>

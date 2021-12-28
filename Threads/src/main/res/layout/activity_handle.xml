@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RunnableActivity">
+
+
+    <TextView
+        android:id="@+id/tv_handle1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="等待执行handle1"/>
+
+    <Button
+        android:id="@+id/bt_handle1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start（内部类）"
+        android:layout_below="@+id/tv_handle1"/>
+
+
+    <TextView
+        android:id="@+id/tv_handle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="等待执行handle2"
+        android:layout_below="@+id/bt_handle1"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/bt_handle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="star2(匿名内部类)"
+        android:layout_below="@+id/tv_handle2"/>
+
+    <TextView
+        android:id="@+id/tv_handle3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="等待执行handle3"
+        android:layout_below="@+id/bt_handle2"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/bt_handle3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="star3（handle.post）"
+        android:layout_below="@+id/tv_handle3"/>
+
+</RelativeLayout>

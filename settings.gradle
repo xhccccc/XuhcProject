@@ -1,3 +1,4 @@
+include ':Threads'
 include ':SharedPreferenceUtil'
 include ':Broadcast'
 include ':ContentResolver'
