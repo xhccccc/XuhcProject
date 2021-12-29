@@ -29,7 +29,7 @@ public class MyService2 extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        System.out.println("执行了onCreat()");
+        System.out.println("执行了onCreate()");
 
         //需要申请前台服务权限<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
         //Android O以上需要设置渠道才能显示
@@ -82,7 +82,8 @@ public class MyService2 extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        System.out.println("执行了onDestory()");
+        stopForeground(true);
+        System.out.println("执行了onDestroy()");
     }
 
     @Nullable
@@ -98,6 +99,8 @@ public class MyService2 extends Service {
     @Override
     public boolean onUnbind(Intent intent) {
         System.out.println("执行了onUnbind()");
+        stopForeground(true);
+        stopSelf();
         return super.onUnbind(intent);
     }
 

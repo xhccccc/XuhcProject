@@ -42,14 +42,14 @@ public class ServiceTryActivity extends AppCompatActivity implements View.OnClic
             //构建绑定服务的Intent对象
             Intent bindIntent = new Intent(this, MyService2.class);
             //调用bindService()方法,以此绑定服务
-
+            startForegroundService(bindIntent);
             bindService(bindIntent,connection,BIND_AUTO_CREATE);
             //参数说明
             //第一个参数:Intent对象
             //第二个参数:上面创建的Serviceconnection实例
             //第三个参数:标志位
             //这里传入BIND_AUTO_CREATE表示在Activity和Service建立关联后自动创建Service
-            //这会使得MyService中的onCreate()方法得到执行，但onStartCommand()方法不会执行
+            //这会使得MyService中的onCreate()方法得到执行，但onStartCommand()方法不会执行(纯绑定不会)
         } else if (id == R.id.bt_unbindService){
             //调用unbindService()解绑服务
             //参数是上面创建的Serviceconnection实例
