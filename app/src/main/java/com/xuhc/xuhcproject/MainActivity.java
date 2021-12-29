@@ -19,6 +19,7 @@ import com.xuhc.floatingwindow.FloatWindowActivity;
 import com.xuhc.fragment.FragmentTestActivity;
 import com.xuhc.notificationtry.NotificationActivity;
 import com.xuhc.permission.PermissionActivity;
+import com.xuhc.servicetry.ServiceTryActivity;
 import com.xuhc.sharedpreferenceutil.SharedPreferenceTryActivity;
 import com.xuhc.threads.ThreadsTryActivity;
 import com.xuhc.viewpager.ViewPagerActivity;
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
         mList.add("自定义广播");
         mList.add("SharePreferenceUtil");
         mList.add("Threads(线程使用)");
+        mList.add("Service");
     }
 
     private void initView() {
@@ -129,6 +131,9 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 break;
             case 13:
                 startActivity(new Intent(this, ThreadsTryActivity.class));
+                break;
+            case 14:
+                startActivity(new Intent(this, ServiceTryActivity.class));
                 break;
         }
     }

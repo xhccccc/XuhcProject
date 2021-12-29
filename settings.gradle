@@ -1,3 +1,4 @@
+include ':ServiceTry'
 include ':Threads'
 include ':SharedPreferenceUtil'
 include ':Broadcast'
