@@ -1,3 +1,4 @@
+include ':CustomView'
 include ':BaseMoudle'
 include ':Utils'
 include ':ServiceTry'

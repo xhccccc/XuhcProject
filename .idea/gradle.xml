@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/BaseMoudle" />
             <option value="$PROJECT_DIR$/Broadcast" />
             <option value="$PROJECT_DIR$/ContentResolver" />
+            <option value="$PROJECT_DIR$/CustomView" />
             <option value="$PROJECT_DIR$/DrawBoard" />
             <option value="$PROJECT_DIR$/FileOperations" />
             <option value="$PROJECT_DIR$/FloatingWindow" />

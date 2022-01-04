@@ -14,6 +14,7 @@ import com.xhc.xhcnote.NoteMainActivity;
 import com.xuhc.basemoudle.TestActivity;
 import com.xuhc.broadcast.CustomBroadcastActivity;
 import com.xuhc.contentresolver.ContentResolverActivity;
+import com.xuhc.customview.CustomViewTryActivity;
 import com.xuhc.drawboard.DrawBoardActivity;
 import com.xuhc.fileoperations.FileOperationsActivity;
 import com.xuhc.floatingwindow.FloatWindowActivity;
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
         mList.add("Service");
         mList.add("添加悬浮窗");
         mList.add("画板");
+        mList.add("一些自定义View的集合");
     }
 
     private void initView() {
@@ -144,6 +146,9 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 break;
             case 16:
                 startActivity(new Intent(this, DrawBoardActivity.class));
+                break;
+            case 17:
+                startActivity(new Intent(this, CustomViewTryActivity.class));
                 break;
         }
     }

@@ -1,0 +1,12 @@
+<resources>
+
+    <style name="switch_style" parent="Theme.AppCompat.Light">
+        <!--开启时的颜色-->
+        <item name="colorControlActivated">#00e6db</item>
+        <!--关闭时的颜色-->
+        <item name="colorSwitchThumbNormal">#383434</item>
+        <!--关闭时的轨迹颜色-->
+        <item name="android:colorForeground">#e60000</item>
+    </style>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="quit_dialog_tip_text_size">20sp</dimen>
+    <dimen name="quit_dialog_tip_text_margin_top">33dp</dimen>
+    <dimen name="quit_dialog_tip_text_margin_se">50dp</dimen>
+    <dimen name="quit_dialog_btn_width">133dp</dimen>
+    <dimen name="quit_dialog_btn_height">41dp</dimen>
+    <dimen name="quit_dialog_btn_margin_top">35dp</dimen>
+    <dimen name="quit_dialog_btn_margin_bottom">20dp</dimen>
+    <dimen name="quit_dialog_btn_text_size">17sp</dimen>
+    <dimen name="quit_dialog_btn_margin_start">20dp</dimen>
+    <dimen name="quit_dialog_btn_and_btn_margin_start">66dp</dimen>
+</resources>

@@ -18,4 +18,5 @@
 15.【Threads】多线程简单实例，有Thread，Runnable，Handle, HandleThread, MyIntentService, ThreadPool等使用  
 16.【Service】Service使用(本地、可通信的、前台)  
 17.【FloatingWindow】: 添加悬浮窗，支持移动，自动贴边等  
-18.【DrawBoard】: 简易画板
+18.【DrawBoard】: 简易画板  
+19.【自定义View】: 一些自定义View的集合

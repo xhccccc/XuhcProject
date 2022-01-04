@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomViewTryActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- custom toast -->
+            <Button
+                android:id="@+id/bt_custom_toast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义Toast"/>
+
+            <!-- switch 控件简单自定义 -->
+            <!-- android:background="@android:color/transparent" 是去掉滑块点击动效关键 -->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_compat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textOff=""
+                android:textOn=""
+                app:switchMinWidth="100dp"
+                android:thumb="@drawable/thumb_selector"
+                android:track="@drawable/track_selector"
+                android:background="@android:color/transparent"
+                app:theme="@style/switch_style"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
