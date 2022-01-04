@@ -3,8 +3,8 @@
 
 1.【app】: 主要是跳转到各个具体的moudle里  
 2.【XuhcRecyclerView】: recyclerview的一些使用集合  
-3.【DrawBoard】: 简易画板  
-4.【FloatingWindow】: 添加悬浮窗，支持移动，自动贴边等  
+3.【Utils工具类集合】: 工具类，不断更新  
+4.【BaseMoudle】: Base组件，如BaseActivity，BaseFragment等；后续也根据情况进行更新  
 5.【Permission】: 动态权限申请工具  
 6.【Fragment】: 简易fragment使用  
 7.【ViewPager】: ViewPager结合Fragment使用，有简易指示器实现  
@@ -16,4 +16,6 @@
 13.【Broadcast】: 简易自定义广播  
 14.【SharePreferenceUtil】: SharePreference工具类，存储int，string，boolean，List<>类型  
 15.【Threads】多线程简单实例，有Thread，Runnable，Handle, HandleThread, MyIntentService, ThreadPool等使用  
-16.【Service】Service使用(本地、可通信的、前台)
+16.【Service】Service使用(本地、可通信的、前台)  
+17.【FloatingWindow】: 添加悬浮窗，支持移动，自动贴边等  
+18.【DrawBoard】: 简易画板
