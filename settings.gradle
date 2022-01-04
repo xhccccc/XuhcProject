@@ -1,3 +1,5 @@
+include ':BaseMoudle'
+include ':Utils'
 include ':ServiceTry'
 include ':Threads'
 include ':SharedPreferenceUtil'

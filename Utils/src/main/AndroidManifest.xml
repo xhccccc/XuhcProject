@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xuhc.utils">
+
+    <application>
+        <activity android:name=".ShowActivity">
+            <intent-filter>
+                <action android:name="com.xuhc.xuhcproject.DATE_TIME_UTIL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".UtilsActivity" />
+    </application>
+
+</manifest>

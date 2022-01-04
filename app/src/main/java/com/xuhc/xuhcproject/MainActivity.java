@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.xhc.xhcnote.NoteMainActivity;
+import com.xuhc.basemoudle.TestActivity;
 import com.xuhc.broadcast.CustomBroadcastActivity;
 import com.xuhc.contentresolver.ContentResolverActivity;
 import com.xuhc.drawboard.DrawBoardActivity;
@@ -22,6 +23,7 @@ import com.xuhc.permission.PermissionActivity;
 import com.xuhc.servicetry.ServiceTryActivity;
 import com.xuhc.sharedpreferenceutil.SharedPreferenceTryActivity;
 import com.xuhc.threads.ThreadsTryActivity;
+import com.xuhc.utils.UtilsActivity;
 import com.xuhc.viewpager.ViewPagerActivity;
 import com.xuhc.viewpager2.ViewPager2Activity;
 import com.xuhc.xuhcrecyclerview.RecyclerViewActivity;
@@ -56,8 +58,8 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
 
     private void initData() {
         mList.add("RecyclerView");
-        mList.add("画板");
-        mList.add("添加悬浮窗");
+        mList.add("Utils工具类集合");
+        mList.add("Base组件");
         mList.add("动态权限申请");
         mList.add("简易Fragment");
         mList.add("ViewPager");
@@ -70,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
         mList.add("SharePreferenceUtil");
         mList.add("Threads(线程使用)");
         mList.add("Service");
+        mList.add("添加悬浮窗");
+        mList.add("画板");
     }
 
     private void initView() {
@@ -94,10 +98,10 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 startActivity(new Intent(this, RecyclerViewActivity.class));
                 break;
             case 1:
-                startActivity(new Intent(this, DrawBoardActivity.class));
+                startActivity(new Intent(this, UtilsActivity.class));
                 break;
             case 2:
-                startActivity(new Intent(this, FloatWindowActivity.class));
+                startActivity(new Intent(this, TestActivity.class));
                 break;
             case 3:
                 startActivity(new Intent(this, PermissionActivity.class));
@@ -134,6 +138,12 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 break;
             case 14:
                 startActivity(new Intent(this, ServiceTryActivity.class));
+                break;
+            case 15:
+                startActivity(new Intent(this, FloatWindowActivity.class));
+                break;
+            case 16:
+                startActivity(new Intent(this, DrawBoardActivity.class));
                 break;
         }
     }
