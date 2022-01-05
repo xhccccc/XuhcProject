@@ -19,6 +19,7 @@ import com.xuhc.drawboard.DrawBoardActivity;
 import com.xuhc.fileoperations.FileOperationsActivity;
 import com.xuhc.floatingwindow.FloatWindowActivity;
 import com.xuhc.fragment.FragmentTestActivity;
+import com.xuhc.glidetry.GlideTryActivity;
 import com.xuhc.notificationtry.NotificationActivity;
 import com.xuhc.permission.PermissionActivity;
 import com.xuhc.servicetry.ServiceTryActivity;
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
         mList.add("添加悬浮窗");
         mList.add("画板");
         mList.add("一些自定义View的集合");
+        mList.add("Glide");
     }
 
     private void initView() {
@@ -149,6 +151,9 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 break;
             case 17:
                 startActivity(new Intent(this, CustomViewTryActivity.class));
+                break;
+            case 18:
+                startActivity(new Intent(this, GlideTryActivity.class));
                 break;
         }
     }
