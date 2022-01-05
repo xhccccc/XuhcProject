@@ -8,11 +8,16 @@ import android.view.View;
 import android.widget.CompoundButton;
 
 import com.xuhc.customview.customtoast.ToastUtils;
+import com.xuhc.customview.seekbar.SeekSettingView;
+import com.xuhc.utils.log.LogUtil;
 
 public class CustomViewTryActivity extends AppCompatActivity implements View.OnClickListener
     , CompoundButton.OnCheckedChangeListener{
 
+    private static final String TAG = "xhccc" + CustomViewTryActivity.class.getSimpleName();
+
     private SwitchCompat mSwitchCompat;
+    private SeekSettingView mSeekSettingView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,9 @@ public class CustomViewTryActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.bt_custom_toast).setOnClickListener(this);
         mSwitchCompat = findViewById(R.id.switch_compat);
         mSwitchCompat.setOnCheckedChangeListener(this);
+        mSeekSettingView = findViewById(R.id.custom_seek_bar);
+
+        addListener();
     }
 
     @Override
@@ -35,5 +43,14 @@ public class CustomViewTryActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         ToastUtils.showShortToast(this,"boolean: " + isChecked);
+    }
+
+    private void addListener(){
+        mSeekSettingView.setOnSeekListener(new SeekSettingView.OnSeekListener() {
+            @Override
+            public void onSeek(View view, int value) {
+                LogUtil.p(TAG,String.valueOf(value));
+            }
+        });
     }
 }

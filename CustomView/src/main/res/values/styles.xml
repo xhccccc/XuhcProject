@@ -1,5 +1,8 @@
 <resources>
 
+    <attr name="title" format="string" />
+    <attr name="value" format="string" />
+
     <style name="switch_style" parent="Theme.AppCompat.Light">
         <!--开启时的颜色-->
         <item name="colorControlActivated">#00e6db</item>
@@ -8,5 +11,15 @@
         <!--关闭时的轨迹颜色-->
         <item name="android:colorForeground">#e60000</item>
     </style>
+
+    <declare-styleable name="SeekSettingView">
+        <attr name="title" />
+        <attr name="value" />
+        <attr name="max_value" format="integer" />
+        <attr name="min_value" format="integer" />
+        <attr name="step" format="integer" />
+        <attr name="left" format="reference"/>
+        <attr name="right" format="reference"/>
+    </declare-styleable>
 
 </resources>
