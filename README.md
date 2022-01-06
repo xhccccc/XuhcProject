@@ -20,4 +20,5 @@
 17.【FloatingWindow】: 添加悬浮窗，支持移动，自动贴边等  
 18.【DrawBoard】: 简易画板  
 19.【自定义View】: 一些自定义View的集合  
-20.【Glide】: Glide使用集合
+20.【Glide】: Glide使用集合  
+21.【Retrofit&Rxjava】: Retrofit与Rxjava的单独使用以及联合使用demo

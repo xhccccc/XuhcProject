@@ -22,6 +22,7 @@ import com.xuhc.fragment.FragmentTestActivity;
 import com.xuhc.glidetry.GlideTryActivity;
 import com.xuhc.notificationtry.NotificationActivity;
 import com.xuhc.permission.PermissionActivity;
+import com.xuhc.retrofit_rxjava.RetrofitRxjavaTryActivity;
 import com.xuhc.servicetry.ServiceTryActivity;
 import com.xuhc.sharedpreferenceutil.SharedPreferenceTryActivity;
 import com.xuhc.threads.ThreadsTryActivity;
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
         mList.add("画板");
         mList.add("一些自定义View的集合");
         mList.add("Glide");
+        mList.add("Retrofit&Rxjava");
     }
 
     private void initView() {
@@ -154,6 +156,9 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 break;
             case 18:
                 startActivity(new Intent(this, GlideTryActivity.class));
+                break;
+            case 19:
+                startActivity(new Intent(this, RetrofitRxjavaTryActivity.class));
                 break;
         }
     }

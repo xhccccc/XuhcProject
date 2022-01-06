@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xuhc.retrofit_rxjava">
+
+    <application>
+        <activity android:name=".together.TogetherActivity"></activity>
+        <activity android:name=".rxjava.RxjavaActivity" />
+        <activity android:name=".retrofit.RetrofitActivity" />
+        <activity android:name=".RetrofitRxjavaTryActivity" />
+    </application>
+
+</manifest>
