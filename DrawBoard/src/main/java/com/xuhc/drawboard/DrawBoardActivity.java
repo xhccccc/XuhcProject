@@ -3,7 +3,9 @@ package com.xuhc.drawboard;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 
 import com.xuhc.drawboard.util.SaveToAlbumUtil;
 import com.xuhc.drawboard.view.XLBottomView;
@@ -103,5 +105,14 @@ public class DrawBoardActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    //设置画笔颜色
+    public void changeColor(View v){
+        //获取按钮的背景颜色
+        ColorDrawable drawable = (ColorDrawable) v.getBackground();
+
+        //设置背景颜色
+        draw_board.setLineColor(drawable.getColor());
     }
 }
