@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GreenDaoTryActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/s_btn_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="插入"
+        />
+    <Button
+        android:id="@+id/s_btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="修改"
+        />
+    <Button
+        android:id="@+id/s_btn_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除"
+        />
+
+    <Button
+        android:id="@+id/s_btn_delete_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除所有"
+        />
+
+    <Button
+        android:id="@+id/s_btn_check_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查找全部"
+        />
+
+    <Button
+        android:id="@+id/s_btn_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用queryBuilder进行条件查询"
+        />
+
+    <TextView
+        android:id="@+id/s_tv_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="wait"
+        android:gravity="center"
+        android:textSize="20dp"/>
+
+</LinearLayout>

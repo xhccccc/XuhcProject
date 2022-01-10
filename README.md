@@ -21,4 +21,5 @@
 18.【DrawBoard】: 简易画板  
 19.【自定义View】: 一些自定义View的集合  
 20.【Glide】: Glide使用集合  
-21.【Retrofit&Rxjava】: Retrofit与Rxjava的单独使用以及联合使用demo
+21.【Retrofit&Rxjava】: Retrofit与Rxjava的单独使用以及联合使用demo  
+22.【GreenDaoTry】： 新增GreenDaoTry模块；为数据库demo
