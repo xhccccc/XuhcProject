@@ -8,8 +8,11 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.provider.MediaStore;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -20,6 +23,8 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.xuhc.drawboard.view.XLBottomView.TAG;
 
 public class XLDrawBoard extends View {
 
@@ -45,6 +50,9 @@ public class XLDrawBoard extends View {
 
     //用于反撤销功能而存储的线条
     private List<Graph> remove_graphs;
+
+    float mLastX;
+    float mLastY;
 
     /**
      * 构造方法：Java代码初始化
@@ -91,6 +99,7 @@ public class XLDrawBoard extends View {
 
         //设置背景颜色
         setBackgroundColor(bg_color);
+        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
     }
 
     /**
@@ -105,12 +114,15 @@ public class XLDrawBoard extends View {
         float x = event.getX();
         float y = event.getY();
 
+
         //触摸的过程
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
                 //初始化路径
                 temp_path = new Path();
                 //移动到起点
+                mLastX = x;
+                mLastY = y;
                 temp_path.moveTo(x,y);
 
                 //初始化画笔
@@ -120,14 +132,36 @@ public class XLDrawBoard extends View {
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeCap(Paint.Cap.ROUND);
                 paint.setStrokeJoin(Paint.Join.ROUND);
+                paint.setAntiAlias(true);
+                paint.setDither(true);
+                paint.setFilterBitmap(true);
 
-                //确定Graph
-                Graph graph = new Graph(temp_path, paint);
-                graphs.add(graph);
+                if (board_state == BOARD_STATE_ERASER) {
+                    //初始化橡皮檫画笔
+                    Paint mEraserPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+                    mEraserPaint.setStrokeWidth(lineWidth);
+                    mEraserPaint.setStyle(Paint.Style.STROKE);
+                    mEraserPaint.setStrokeCap(Paint.Cap.ROUND);
+                    mEraserPaint.setStrokeJoin(Paint.Join.ROUND);
+                    mEraserPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+                    mEraserPaint.setAntiAlias(true);
+                    mEraserPaint.setDither(true);
+                    mEraserPaint.setFilterBitmap(true);
+                    //确定Graph
+                    Graph graph = new Graph(temp_path, mEraserPaint);
+                    graphs.add(graph);
+                } else {
+                    //确定Graph
+                    Graph graph = new Graph(temp_path, paint);
+                    graphs.add(graph);
+                }
 
                 break;
             case MotionEvent.ACTION_MOVE:
                 //完善路径
+//                temp_path.quadTo(mLastX, mLastY, x, y);
+//                mLastX = x;
+//                mLastY = y;
                 temp_path.lineTo(x,y);
 
                 break;
@@ -235,7 +269,7 @@ public class XLDrawBoard extends View {
         //以这个bitmap创建一个画板
         Canvas canvas = new Canvas(bitmap);
         //绘制背景
-        canvas.drawColor(bg_color);
+//        canvas.drawColor(bg_color);
         //绘制线条
         if (graphs != null){
             //遍历Graphs数组
@@ -245,6 +279,25 @@ public class XLDrawBoard extends View {
             }
         }
 
+        Bitmap backBitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+        backBitmap.eraseColor(Color.parseColor("#ffffff"));
+
+
+        return mergeBitmap(backBitmap,bitmap);
+    }
+
+    public static Bitmap mergeBitmap(Bitmap backBitmap, Bitmap frontBitmap) {
+
+        if (backBitmap == null || backBitmap.isRecycled()
+                || frontBitmap == null || frontBitmap.isRecycled()) {
+            Log.e(TAG, "backBitmap=" + backBitmap + ";frontBitmap=" + frontBitmap);
+            return null;
+        }
+        Bitmap bitmap = backBitmap.copy(Bitmap.Config.ARGB_8888, true);
+        Canvas canvas = new Canvas(bitmap);
+        Rect baseRect  = new Rect(0, 0, backBitmap.getWidth(), backBitmap.getHeight());
+        Rect frontRect = new Rect(0, 0, frontBitmap.getWidth(), frontBitmap.getHeight());
+        canvas.drawBitmap(frontBitmap, frontRect, baseRect, null);
         return bitmap;
     }
 
@@ -274,7 +327,7 @@ public class XLDrawBoard extends View {
         this.board_state = board_state;
 
         if (board_state == BOARD_STATE_ERASER) {
-            lineColor = bg_color;
+//            lineColor = bg_color;
 
             lineWidth = 50;
         }else {

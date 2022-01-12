@@ -69,12 +69,14 @@ public class DrawBoardActivity extends AppCompatActivity {
             public void itemStatusDidChange(int index) {
                 switch (index){
                     case 0:
-                        //橡皮
+                        //画笔
                         draw_board.setBoard_state(XLDrawBoard.BOARD_STATE_PEN);
+                        size_controller.setCurrentProgress(draw_board.getLineWidth());
                         break;
                     case 1:
                         //橡皮
                         draw_board.setBoard_state(XLDrawBoard.BOARD_STATE_ERASER);
+                        size_controller.setCurrentProgress(draw_board.getLineWidth());
                         break;
                     case 2:
                         //撤销

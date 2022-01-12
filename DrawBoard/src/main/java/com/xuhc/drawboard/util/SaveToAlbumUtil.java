@@ -25,7 +25,9 @@ public class SaveToAlbumUtil {
         //系统相册目录
         String galleryPath= Environment.getExternalStorageDirectory()
                 + File.separator + Environment.DIRECTORY_DCIM
-                +File.separator+"Camera"+File.separator;
+                + File.separator + "Pictures"
+                + ""
+                + File.separator;
 
         // 声明文件对象
         File file = null;
@@ -34,13 +36,13 @@ public class SaveToAlbumUtil {
 
         try {
             // 如果有目标文件，直接获得文件对象，否则创建一个以filename为名称的文件
-            file = new File(galleryPath, picName+ ".jpeg");
+            file = new File(galleryPath, picName);
 
             // 获得文件相对路径
             fileName = file.toString();
             // 获得输出流，如果文件中有内容，追加内容
             outStream = new FileOutputStream(fileName);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, outStream);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
 
         } catch (Exception e) {
             e.getStackTrace();
