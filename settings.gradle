@@ -1,3 +1,4 @@
+include ':LiveData'
 include ':GreenDaoTry'
 include ':Retrofit_Rxjava'
 include ':GlideTry'

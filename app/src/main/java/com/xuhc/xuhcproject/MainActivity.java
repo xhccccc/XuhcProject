@@ -21,6 +21,7 @@ import com.xuhc.floatingwindow.FloatWindowActivity;
 import com.xuhc.fragment.FragmentTestActivity;
 import com.xuhc.glidetry.GlideTryActivity;
 import com.xuhc.greendaotry.GreenDaoTryActivity;
+import com.xuhc.livedata.LiveDataActivity;
 import com.xuhc.notificationtry.NotificationActivity;
 import com.xuhc.permission.PermissionActivity;
 import com.xuhc.retrofit_rxjava.RetrofitRxjavaTryActivity;
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
         mList.add("Glide");
         mList.add("Retrofit&Rxjava");
         mList.add("GreenDaoTry");
+        mList.add("LiveData");
     }
 
     private void initView() {
@@ -164,6 +166,9 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 break;
             case 20:
                 startActivity(new Intent(this, GreenDaoTryActivity.class));
+                break;
+            case 21:
+                startActivity(new Intent(this, LiveDataActivity.class));
                 break;
         }
     }
