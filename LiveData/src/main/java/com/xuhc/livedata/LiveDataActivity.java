@@ -1,12 +1,12 @@
 package com.xuhc.livedata;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
+import com.xuhc.livedata.databinding.ActivityLiveDataBinding;
 
 /**
  * 参考链接
@@ -20,21 +20,23 @@ public class LiveDataActivity extends AppCompatActivity {
 
     private static final String TAG = "xhccc" + LiveDataActivity.class.getSimpleName();
 
+    private ActivityLiveDataBinding mLiveDataBinding;
+
     private MyViewModel viewModel;
-    private TextView mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_live_data);
+//        setContentView(R.layout.activity_live_data);
 
-        mTextView = findViewById(R.id.tv_live_data_test);
+        mLiveDataBinding = DataBindingUtil.setContentView(this,R.layout.activity_live_data);
+
         viewModel = new ViewModelProvider(this).get(MyViewModel.class);
 //        viewModel.countDown();
         viewModel.getLiveData().observe(this, new Observer<Long>() {
             @Override
             public void onChanged(Long aLong) {
-                mTextView.setText(String.valueOf(aLong/1000));
+                mLiveDataBinding.tvLiveDataTest.setText(String.valueOf(aLong/1000));
             }
         });
 
@@ -42,7 +44,7 @@ public class LiveDataActivity extends AppCompatActivity {
             @Override
             public void onChanged(String s) {
                 Log.i(TAG, "liveDataMerger onChanged: " + s);
-                mTextView.setText(s);
+                mLiveDataBinding.tvLiveDataTest.setText(s);
             }
         });
         viewModel.mergeTest();
