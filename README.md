@@ -23,4 +23,5 @@
 20.【Glide】: Glide使用集合  
 21.【Retrofit&Rxjava】: Retrofit与Rxjava的单独使用以及联合使用demo  
 22.【GreenDaoTry】： 新增GreenDaoTry模块；为数据库demo  
-23.【LiveData】: LiveData使用demo
+23.【LiveData】: LiveData使用demo  
+24.【MVVM】: MVVM框架使用demo；结合dataBinding、LiveData等
