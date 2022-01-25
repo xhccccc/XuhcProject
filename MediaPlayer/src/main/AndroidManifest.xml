@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xuhc.mediaplayer">
+
+    <application>
+        <activity android:name=".videoview.VideoViewActivity"></activity>
+        <activity android:name=".MediaPlayerActivity" />
+        <activity android:name=".texture.TextureViewActivity" />
+        <activity android:name=".surface.SurfaceViewActivity" />
+    </application>
+
+</manifest>
