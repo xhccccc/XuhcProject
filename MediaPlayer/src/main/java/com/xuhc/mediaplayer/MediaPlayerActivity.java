@@ -10,6 +10,7 @@ import android.view.View;
 import com.xuhc.mediaplayer.surface.SurfaceViewActivity;
 import com.xuhc.mediaplayer.texture.TextureViewActivity;
 import com.xuhc.mediaplayer.videoview.VideoViewActivity;
+import com.xuhc.mediastore.MediaStoreTestActivity;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,6 +27,7 @@ public class MediaPlayerActivity extends AppCompatActivity implements View.OnCli
         findViewById(R.id.bt_texture_view).setOnClickListener(this);
         findViewById(R.id.bt_surface_view).setOnClickListener(this);
         findViewById(R.id.bt_video_view).setOnClickListener(this);
+        findViewById(R.id.bt_media_store).setOnClickListener(this);
     }
 
     @Override
@@ -41,6 +43,9 @@ public class MediaPlayerActivity extends AppCompatActivity implements View.OnCli
             startActivity(intent);
         } else if (id == R.id.bt_video_view){
             Intent intent = new Intent(this, VideoViewActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.bt_media_store){
+            Intent intent = new Intent(this, MediaStoreTestActivity.class);
             startActivity(intent);
         }
     }

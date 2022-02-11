@@ -3,7 +3,8 @@
     package="com.xuhc.mediaplayer">
 
     <application>
-        <activity android:name=".videoview.VideoViewActivity"></activity>
+        <activity android:name="com.xuhc.mediastore.MediaStoreTestActivity"></activity>
+        <activity android:name=".videoview.VideoViewActivity" />
         <activity android:name=".MediaPlayerActivity" />
         <activity android:name=".texture.TextureViewActivity" />
         <activity android:name=".surface.SurfaceViewActivity" />

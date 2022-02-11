@@ -25,4 +25,10 @@
         android:layout_height="wrap_content"
         android:text="VideoView"/>
 
+    <Button
+        android:id="@+id/bt_media_store"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MediaStore"/>
+
 </LinearLayout>
