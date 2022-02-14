@@ -1,4 +1,4 @@
-package com.xuhc.utils;
+package com.xuhc.utils.date;
 
 import android.util.Log;
 import android.view.View;
@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.xuhc.basemoudle.BaseFragment;
+import com.xuhc.utils.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -73,6 +74,8 @@ public class DateTimeFragment extends BaseFragment implements View.OnClickListen
                     + "getCurrentYear: " + DateTimeUtil.getCurrentYear() + "\n"
                     + "getCurrentMonth: " + DateTimeUtil.getCurrentMonth() + "\n"
                     + "getCurrentDay: " + DateTimeUtil.getCurrentDay() + "\n"
+                    + "getCurrentWeekend: " + DateTimeUtil.getCurrentWeekend()+ "\n"
+                    + "getCurrentTimeByAPM: " + DateTimeUtil.getCurrentTimeByAPM() + "\n"
                     + "getMouthToEnglish: " + DateTimeUtil.getMouthToEnglish(getContext()) + "\n"
                     + "getDayToEnglish: " + DateTimeUtil.getDayToEnglish(getContext()) + "\n"
                     + "getCurrentTime: " + DateTimeUtil.getCurrentTime(getContext()) + "\n"

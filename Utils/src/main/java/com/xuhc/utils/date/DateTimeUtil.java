@@ -1,8 +1,11 @@
-package com.xuhc.utils;
+package com.xuhc.utils.date;
 
 import android.content.Context;
 import android.provider.Settings;
 import android.text.format.DateFormat;
+
+import com.xuhc.utils.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -56,6 +59,17 @@ public class DateTimeUtil {
     }
 
     /**
+     * 获取星期
+     *
+     * @return 当前为星期几
+     */
+    public static String getCurrentWeekend() {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat sf = new SimpleDateFormat("EEEE", Locale.getDefault());
+        return sf.format(calendar.getTime());
+    }
+
+    /**
      * 获取年
      *
      * @return 当前年份字符
@@ -83,6 +97,16 @@ public class DateTimeUtil {
     public static int getCurrentDay() {
         Calendar calendar = Calendar.getInstance();
         return calendar.get(Calendar.DAY_OF_MONTH);
+    }
+
+    /**
+     * 获取AM,PM
+     *
+     * @return 当前日的字符
+     */
+    public static int getCurrentTimeByAPM() {
+        Calendar calendar = Calendar.getInstance();
+        return calendar.get(Calendar.AM_PM);
     }
 
     /**

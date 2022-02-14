@@ -1,13 +1,10 @@
 package com.xuhc.utils;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.provider.Settings;
 
 import com.xuhc.basemoudle.BaseActivity;
 import com.xuhc.basemoudle.BaseFragment;
 import com.xuhc.basemoudle.TestFragment;
+import com.xuhc.utils.date.DateTimeFragment;
 
 public class ShowActivity extends BaseActivity {
 
