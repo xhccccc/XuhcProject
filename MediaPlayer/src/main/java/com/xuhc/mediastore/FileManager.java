@@ -26,6 +26,8 @@ import java.util.TimeZone;
  */
 public class FileManager {
 
+    private static final String TAG = "xhccc" + FileManager.class.getSimpleName();
+
     private volatile static FileManager instance;
 
     private ContentResolver contentResolver;
@@ -126,7 +128,7 @@ public class FileManager {
                 // 时长
                 int duration = c.getInt(c.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION));
                 String format = c.getString(c.getColumnIndexOrThrow(MediaStore.Audio.AudioColumns.MIME_TYPE));
-                Log.d("hekh", "format=" + format + "name =" + name);
+                Log.d(TAG, "format=" + format + "name =" + name);
                 MusicBean music = new MusicBean(name, title, path, artist, false);
                 musics.add(music);
             }

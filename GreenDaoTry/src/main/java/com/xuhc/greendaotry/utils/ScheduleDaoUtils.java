@@ -39,7 +39,7 @@ public class ScheduleDaoUtils {
                 @Override
                 public void run() {
                     for (Schedule schedule : scheduleList) {
-                        mDaoManager.getDaoSession().insertOrReplace(schedule);
+                        mDaoManager.getDaoSession().getScheduleDao().insertOrReplace(schedule);
                     }
                 }
             });

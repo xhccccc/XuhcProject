@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_gravity="center"
+        android:textColor="@color/black"
         tools:text="内容" />
 
 </LinearLayout>

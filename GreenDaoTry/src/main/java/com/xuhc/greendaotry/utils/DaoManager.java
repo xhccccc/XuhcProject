@@ -44,7 +44,7 @@ public class DaoManager {
     }
 
     public void init(Context context) {
-        this.context = context;
+        this.context = context.getApplicationContext();
     }
 
     /**

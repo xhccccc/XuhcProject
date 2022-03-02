@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
@@ -43,6 +45,16 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
     private static final String TAG = "xhccc" + MainActivity.class.getSimpleName();
 
     private List<String> mList = new ArrayList<>();
+
+    //可以控制应用dpi
+//    @Override // androidx.appcompat.app.AppCompatActivity, android.content.Context, android.view.ContextThemeWrapper, android.content.ContextWrapper
+//    public Resources getResources() {
+//        Resources resources = super.getResources();
+//        Configuration configuration = new Configuration();
+//        configuration.densityDpi = 480;
+//        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+//        return resources;
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
