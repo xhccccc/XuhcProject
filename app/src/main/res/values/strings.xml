@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">XuhcProject</string>
+
+    <string name="share_with">分享方式</string>
 </resources>

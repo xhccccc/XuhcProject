@@ -9,7 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="com.xuhc.xuhcproject.MyApplication">
-        <activity android:name="com.xuhc.xuhcproject.MainActivity">
+        <activity android:name="com.xuhc.xuhcproject.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

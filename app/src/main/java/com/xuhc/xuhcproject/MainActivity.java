@@ -1,17 +1,26 @@
 package com.xuhc.xuhcproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.xhc.xhcnote.NoteMainActivity;
 import com.xuhc.basemoudle.TestActivity;
 import com.xuhc.broadcast.CustomBroadcastActivity;
@@ -61,18 +70,50 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        try {
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(getResources().getColor(R.color.purple_500));
-            //底部导航栏
-            //window.setNavigationBarColor(activity.getResources().getColor(colorResId));
-        } catch (Exception e) {
-            e.printStackTrace();
+//        try {
+//            Window window = getWindow();
+//            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//            window.setStatusBarColor(getResources().getColor(R.color.purple_500));
+//            //底部导航栏
+//            //window.setNavigationBarColor(activity.getResources().getColor(colorResId));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+        FloatingActionButton fab = findViewById(R.id.fab_scrolling);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT, Constant.SHARE_CONTENT);
+                intent.setType("text/plain");
+                startActivity(Intent.createChooser(intent, getString(R.string.share_with)));
+            }
+        });
+        ImageView image_scrolling_top = findViewById(R.id.image_scrolling_top);
+        Glide.with(this).load(R.drawable.material_design_3).apply(new RequestOptions().fitCenter()).into(image_scrolling_top);
+
 
         initData();
         initView();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Configuration configuration = getResources().getConfiguration();
+        if (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+
+            CollapsingToolbarLayout collapsing_toolbar_layout = findViewById(R.id.collapsing_toolbar_layout);
+            collapsing_toolbar_layout.setExpandedTitleTextColor(ColorStateList.valueOf(Color.TRANSPARENT));
+        }
     }
 
     private void initData() {
