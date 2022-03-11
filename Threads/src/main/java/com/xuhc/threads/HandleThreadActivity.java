@@ -127,6 +127,7 @@ public class HandleThreadActivity extends AppCompatActivity implements View.OnCl
             workHandler.sendMessage(msg);
         } else if (id == R.id.bt_handle_thread3){
             mHandlerThread.quitSafely();
+            workHandler.removeCallbacks(null);
         }
     }
 }
