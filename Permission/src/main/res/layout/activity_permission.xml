@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".PermissionActivity">
 
+    <Button
+        android:id="@+id/bt_request_permission_old"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="old_request_permission"/>
+
+    <Button
+        android:id="@+id/bt_request_permission_new"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_request_permission_old"
+        android:textAllCaps="false"
+        android:text="new_request_permission"/>
+
     <TextView
         android:id="@+id/tv_permission_tip"
         android:layout_width="wrap_content"
