@@ -1,9 +1,9 @@
 package com.xuhc.utils;
 
 
-import com.xuhc.basemoudle.BaseActivity;
-import com.xuhc.basemoudle.BaseFragment;
-import com.xuhc.basemoudle.TestFragment;
+import com.xuhc.basemodule.BaseActivity;
+import com.xuhc.basemodule.BaseFragment;
+import com.xuhc.basemodule.TestFragment;
 import com.xuhc.utils.date.DateTimeFragment;
 
 public class ShowActivity extends BaseActivity {

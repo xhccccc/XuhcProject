@@ -56,7 +56,7 @@ dependencies {
     implementation project(path: ':SharedPreferenceUtil')
     implementation project(path: ':Threads')
     implementation project(path: ':ServiceTry')
-    implementation project(path: ':BaseMoudle')
+    implementation project(path: ':BaseModule')
     implementation project(path: ':Utils')
     implementation project(path: ':CustomView')
     implementation project(path: ':GlideTry')

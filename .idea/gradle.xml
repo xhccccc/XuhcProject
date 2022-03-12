@@ -11,7 +11,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/BaseMoudle" />
+            <option value="$PROJECT_DIR$/BaseModule" />
             <option value="$PROJECT_DIR$/Broadcast" />
             <option value="$PROJECT_DIR$/ContentResolver" />
             <option value="$PROJECT_DIR$/CustomView" />

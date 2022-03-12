@@ -1,8 +1,4 @@
-package com.xuhc.basemoudle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
+package com.xuhc.basemodule;
 
 public class TestActivity extends BaseActivity {
 

@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.xuhc.basemoudle.BaseFragment;
+import com.xuhc.basemodule.BaseFragment;
 import com.xuhc.utils.R;
 
 import java.text.SimpleDateFormat;

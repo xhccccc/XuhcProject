@@ -9,14 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -24,7 +21,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.xhc.xhcnote.NoteMainActivity;
-import com.xuhc.basemoudle.TestActivity;
+import com.xuhc.basemodule.BaseModuleActivity;
 import com.xuhc.broadcast.CustomBroadcastActivity;
 import com.xuhc.contentresolver.ContentResolverActivity;
 import com.xuhc.customview.CustomViewTryActivity;
@@ -170,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 startActivity(new Intent(this, UtilsActivity.class));
                 break;
             case 2:
-                startActivity(new Intent(this, TestActivity.class));
+                startActivity(new Intent(this, BaseModuleActivity.class));
                 break;
             case 3:
                 startActivity(new Intent(this, PermissionActivity.class));

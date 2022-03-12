@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xuhc.basemodule">
+
+    <application>
+        <activity
+            android:name="com.xuhc.basemodule.BaseModuleActivity"
+            android:exported="false" />
+        <activity android:name="com.xuhc.basemodule.TestActivity" />
+    </application>
+
+</manifest>

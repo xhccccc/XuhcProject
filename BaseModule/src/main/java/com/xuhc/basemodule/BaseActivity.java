@@ -1,5 +1,6 @@
-package com.xuhc.basemoudle;
+package com.xuhc.basemodule;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import androidx.annotation.Nullable;
@@ -13,6 +14,7 @@ public abstract class BaseActivity extends FragmentActivity {
 
     private FrameLayout contentFrame;
     public BaseFragment currentFragment;
+    public OnActivityResultManager mOnActivityResultManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public abstract class BaseActivity extends FragmentActivity {
         setContentView(R.layout.activity_base);
         contentFrame = (FrameLayout) findViewById(R.id.content_frame);
 
+        mOnActivityResultManager = new OnActivityResultManager(this);
 
         BaseFragment fragment = getFragment();
         if (fragment != null) {
@@ -80,4 +83,9 @@ public abstract class BaseActivity extends FragmentActivity {
         super.onDestroy();
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        mOnActivityResultManager.onActivityResult(requestCode,resultCode,data);
+    }
 }

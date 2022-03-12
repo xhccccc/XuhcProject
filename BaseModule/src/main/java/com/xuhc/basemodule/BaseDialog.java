@@ -1,4 +1,4 @@
-package com.xuhc.basemoudle;
+package com.xuhc.basemodule;
 
 import android.app.Dialog;
 import android.content.Context;

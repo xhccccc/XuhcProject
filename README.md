@@ -4,7 +4,7 @@
 1.【app】: 主要是跳转到各个具体的moudle里  
 2.【XuhcRecyclerView】: recyclerview的一些使用集合  
 3.【Utils工具类集合】: 工具类，不断更新  
-4.【BaseMoudle】: Base组件，如BaseActivity，BaseFragment等；后续也根据情况进行更新  
+4.【BaseModule】: Base组件，如BaseActivity，BaseFragment等；后续也根据情况进行更新  
 5.【Permission】: 动态权限申请工具  
 6.【Fragment】: 简易fragment使用  
 7.【ViewPager】: ViewPager结合Fragment使用，有简易指示器实现  
