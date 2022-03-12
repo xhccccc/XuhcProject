@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.material.button.MaterialButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,8 +56,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
-        holder.tvContent.setText(mList.get(position));
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.mbContent.setText(mList.get(position));
+        holder.mbContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (mOnItemClickListener != null){
@@ -72,11 +74,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
 
     public static class MainViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvContent;
+        MaterialButton mbContent;
 
         public MainViewHolder(View itemView) {
             super(itemView);
-            tvContent = itemView.findViewById(R.id.tv_content_main);
+            mbContent = itemView.findViewById(R.id.mb_content_main);
         }
     }
 }
