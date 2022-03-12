@@ -13,4 +13,12 @@
         android:textAllCaps="false"
         android:text="OnActivityResult"/>
 
+    <Button
+        android:id="@+id/bt_activity_result_new"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_activity_result"
+        android:textAllCaps="false"
+        android:text="OnActivityResult_New"/>
+
 </RelativeLayout>
