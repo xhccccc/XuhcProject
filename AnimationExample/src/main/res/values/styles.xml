@@ -1,0 +1,44 @@
+<resources>
+    <declare-styleable name="CircleProgressView">
+        <attr name="circleStartColor" format="color" />
+        <attr name="circleCenterColor" format="color" />
+        <attr name="circleEndColor" format="color" />
+        //半径
+        <attr name="circleRadiusWidth" format="dimension" />
+        //外环宽
+        <attr name="circleRingWidth" format="dimension" />
+        //外环高
+        <attr name="circleRingHeight" format="dimension" />
+
+    </declare-styleable>
+
+    <!-- for MovingCircleView -->
+    <declare-styleable name="MovingCircleView">
+        <!--小圆点的总数-->
+        <attr name="mcv_dot_count" format="integer"/>
+        <!--中心大圆点的半径-->
+        <attr name="mcv_center_dot_radius" format="dimension"/>
+        <!--中心大圆点的资源文件-->
+        <attr name="mcv_center_dot_back" format="reference"/>
+        <!--小圆点的颜色-->
+        <attr name="mcv_dot_color" format="color"/>
+        <!--最大小圆点半径-->
+        <attr name="mcv_dot_max_radius" format="dimension"/>
+        <!--最小小圆点半径-->
+        <attr name="mcv_dot_min_radius" format="dimension"/>
+        <!--小圆点的最大速度(1~10)-->
+        <attr name="mcv_dot_max_speed" format="integer"/>
+        <!--小圆点的最小速度(1~10)-->
+        <attr name="mcv_dot_min_speed" format="integer"/>
+        <!--进度显示文字大小-->
+        <attr name="mcv_text_size" format="dimension"/>
+        <!--进度显示文字颜色-->
+        <attr name="mcv_text_color" format="color"/>
+        <!--加速按钮的文字颜色-->
+        <attr name="mcv_btn_text_color" format="color"/>
+        <!--动画持续的时间-->
+        <attr name="mcv_animator_duration" format="integer"/>
+    </declare-styleable>
+
+
+</resources>

@@ -25,4 +25,5 @@
 22.【GreenDaoTry】： 新增GreenDaoTry模块；为数据库demo  
 23.【LiveData】: LiveData使用demo  
 24.【MVVM】: MVVM框架使用demo；结合dataBinding、LiveData等  
-25.【MediaPlayer】: 使用MediaPlayer播放视频demo
+25.【MediaPlayer】: 使用MediaPlayer播放视频demo  
+26.【AnimationExample】: 简单使用ObjectAnimator，一些简易动画

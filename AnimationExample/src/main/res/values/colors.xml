@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- smallcircle color -->
+    <color name="color_small_dot">#5cd7ff</color>
+    <!-- center circle progress color -->
+    <color name="color_progress_text">#ffffff</color>
+</resources>

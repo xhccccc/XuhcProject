@@ -1,3 +1,4 @@
+include ':AnimationExample'
 include ':MediaPlayer'
 include ':MVVM'
 include ':LiveData'
