@@ -2,10 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xuhc.utils">
 
-    <application>
+    <application
+        android:requestLegacyExternalStorage="true">
         <activity android:name=".ShowActivity">
             <intent-filter>
                 <action android:name="com.xuhc.xuhcproject.DATE_TIME_UTIL" />
+                <action android:name="com.xuhc.xuhcproject.CATCH_CRASH" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

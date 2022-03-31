@@ -17,18 +17,23 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/bt_date_utils_activity"
+                android:id="@+id/bt_make_crash"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:text="日期时间工具类"/>
+                android:text="doMakeCrash"/>
 
             <Button
-                android:id="@+id/bt_catch_crash"
+                android:id="@+id/bt_make_crash2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:text="捕捉异常"/>
+                android:text="doMakeCrash2"/>
+
+            <TextView
+                android:id="@+id/tv_crash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
         </LinearLayout>
 

@@ -14,6 +14,7 @@ public class UtilsActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_utils);
 
         findViewById(R.id.bt_date_utils_activity).setOnClickListener(this);
+        findViewById(R.id.bt_catch_crash).setOnClickListener(this);
     }
 
     @Override
@@ -22,6 +23,8 @@ public class UtilsActivity extends AppCompatActivity implements View.OnClickList
         Intent intent = new Intent();
         if (id == R.id.bt_date_utils_activity){
             intent.setAction("com.xuhc.xuhcproject.DATE_TIME_UTIL");
+        } else if (id == R.id.bt_catch_crash){
+            intent.setAction("com.xuhc.xuhcproject.CATCH_CRASH");
         }
 
         startActivity(intent);
