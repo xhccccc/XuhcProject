@@ -1,9 +1,5 @@
 package com.xuhc.mvvm;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.os.Bundle;
 
 import com.xuhc.mvvm.adapter.FragmentAdapter;
@@ -11,6 +7,10 @@ import com.xuhc.mvvm.databinding.ActivityMVVMBinding;
 import com.xuhc.mvvm.fragment.ExpandFragment;
 import com.xuhc.mvvm.fragment.ExpandFragment2;
 import com.xuhc.mvvm.fragment.HomeFragment;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.viewpager2.widget.ViewPager2;
 
 public class MVVMActivity extends AppCompatActivity {
 
@@ -23,23 +23,20 @@ public class MVVMActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mActivityMVVMBinding = DataBindingUtil.setContentView(this,R.layout.activity_m_v_v_m);
+        mActivityMVVMBinding = DataBindingUtil.setContentView(this, R.layout.activity_m_v_v_m);
         initViewPager2();
     }
 
-    private void initViewPager2(){
+    private void initViewPager2() {
         fragmentAdapter = new FragmentAdapter(this);
-        mActivityMVVMBinding.viewPager.setAdapter(fragmentAdapter);
+        mActivityMVVMBinding.viewPager2.setAdapter(fragmentAdapter);
         fragmentAdapter.addFragment(new HomeFragment());
         fragmentAdapter.addFragment(new ExpandFragment());
         fragmentAdapter.addFragment(new ExpandFragment2());
-        mActivityMVVMBinding.viewPager.setCurrentItem(INIT_VIEWPAGER_CUR_NUMBER);
-
-        mActivityMVVMBinding.indicator.setIndicatorPointNumber(fragmentAdapter.getItemCount());
-        mActivityMVVMBinding.indicator.setIndicatorSelect(mActivityMVVMBinding.viewPager.getCurrentItem());
-        mActivityMVVMBinding.indicator.setPageSelectPosition(INIT_VIEWPAGER_CUR_NUMBER);
-
-        mActivityMVVMBinding.viewPager.registerOnPageChangeCallback(mOnPageChangeCallback);
+        mActivityMVVMBinding.viewPager2.setCurrentItem(INIT_VIEWPAGER_CUR_NUMBER);
+        //初始化indicator
+        mActivityMVVMBinding.indicator.setIndicatorPointNumber(fragmentAdapter.getItemCount(), mActivityMVVMBinding.viewPager2.getCurrentItem());
+        mActivityMVVMBinding.viewPager2.registerOnPageChangeCallback(mOnPageChangeCallback);
     }
 
     /**
@@ -48,28 +45,23 @@ public class MVVMActivity extends AppCompatActivity {
     public ViewPager2.OnPageChangeCallback mOnPageChangeCallback = new ViewPager2.OnPageChangeCallback() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            mActivityMVVMBinding.indicator.indicatorPointMove(mActivityMVVMBinding.indicator.getDistance(),position,positionOffset);
             super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+            mActivityMVVMBinding.indicator.indicatorPointMove(mActivityMVVMBinding.indicator.getDistance(), position, positionOffset);
         }
 
         @Override
         public void onPageSelected(int position) {
-            mActivityMVVMBinding.indicator.setPageSelectPosition(position);
-            mActivityMVVMBinding.indicator.setIndicatorSelect(position);
-
-            fragmentAdapter.getBaseItem(position).pageSelect();
-
             super.onPageSelected(position);
+            mActivityMVVMBinding.indicator.setIndicatorSelect(position);
+            fragmentAdapter.getBaseItem(position).pageSelect();
         }
 
         @Override
         public void onPageScrollStateChanged(int state) {
-            if (state == 1){
-                mActivityMVVMBinding.indicator.initialIndicator();
-            } else if (state == 2){
-                mActivityMVVMBinding.indicator.setIndicatorSelectNotInit(mActivityMVVMBinding.indicator.getPageSelectPosition());
-            }
             super.onPageScrollStateChanged(state);
+            if (state == 1) {
+                mActivityMVVMBinding.indicator.initialIndicator();
+            }
         }
     };
 }

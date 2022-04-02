@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="indicator_point_margin_left">10dp</dimen>
+    <dimen name="indicator_point_margin_left">11dp</dimen>
+    <dimen name="indicator_point_select_width">21dp</dimen>
+    <dimen name="indicator_point_radius">9dp</dimen>
+    <dimen name="indicator_view_margin_bottom">23dp</dimen>
 </resources>

@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_pager"
+            android:id="@+id/view_pager2"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -23,7 +23,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="100dp"/>
+            android:layout_marginBottom="100dp"
+            app:select_width="@dimen/indicator_point_select_width"
+            app:select_height="@dimen/indicator_point_radius"
+            app:select_point_background="@drawable/indicator_select"
+            app:point_frame_width="@dimen/indicator_point_select_width"
+            app:point_radius="@dimen/indicator_point_radius"
+            app:point_background="@drawable/indicator_points"/>
 
     </RelativeLayout>
 </layout>

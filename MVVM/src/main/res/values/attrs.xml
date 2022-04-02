@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="IndicatorView">
+        <attr name="select_width" format="reference|integer" />
+        <attr name="select_height" format="reference|integer" />
+        <attr name="select_point_background" format="reference" />
+        <attr name="point_radius" format="reference|integer" />
+        <attr name="point_frame_width" format="reference|integer" />
+        <attr name="point_background" format="reference" />
+    </declare-styleable>
+
+</resources>

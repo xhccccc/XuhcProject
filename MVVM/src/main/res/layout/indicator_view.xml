@@ -4,18 +4,16 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
+        android:id="@+id/ll_indicator_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ll_indicator_view"
         android:clickable="false"
         android:gravity="center"
-        android:orientation="horizontal">
-    </LinearLayout>
+        android:orientation="horizontal"/>
 
     <ImageView
         android:id="@+id/indicator_run"
-        android:layout_width="11dp"
-        android:layout_height="7dp"
-        android:background="@drawable/indicator_select" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>
