@@ -52,6 +52,17 @@
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_ring"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#30A3F6"
+            android:text="fragment和ViewPager2轮播尝试"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="16sp" />
     </LinearLayout>
 
 </FrameLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.xuhc.viewpager2.horizontal.HorizontalActivity;
+import com.xuhc.viewpager2.ringForFragment.RingActivity;
 import com.xuhc.viewpager2.vertical.VerticalActivity;
 import com.xuhc.viewpager2.withRadioGroup.RgActivity;
 import com.xuhc.viewpager2.withTab.TabActivity;
@@ -21,6 +22,7 @@ public class ViewPager2Activity extends AppCompatActivity implements View.OnClic
         findViewById(R.id.btn_vertical).setOnClickListener(this);
         findViewById(R.id.btn_rg).setOnClickListener(this);
         findViewById(R.id.btn_tab).setOnClickListener(this);
+        findViewById(R.id.btn_ring).setOnClickListener(this);
     }
 
     @Override
@@ -34,6 +36,8 @@ public class ViewPager2Activity extends AppCompatActivity implements View.OnClic
             startActivity(new Intent(this, RgActivity.class));
         } else if (id == R.id.btn_tab) {
             startActivity(new Intent(this, TabActivity.class));
+        } else if (id == R.id.btn_ring) {
+            startActivity(new Intent(this, RingActivity.class));
         }
 
     }

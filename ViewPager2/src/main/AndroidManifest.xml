@@ -5,11 +5,14 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
+        <activity
+            android:name=".ringForFragment.RingActivity"
+            android:exported="false" />
         <activity android:name=".withRadioGroup.RgActivity" />
         <activity android:name=".withTab.TabActivity" />
         <activity android:name=".vertical.VerticalActivity" />
         <activity android:name=".horizontal.HorizontalActivity" />
-        <activity android:name=".ViewPager2Activity"/>
+        <activity android:name=".ViewPager2Activity" />
     </application>
 
 </manifest>

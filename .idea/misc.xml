@@ -7,12 +7,27 @@
         <entry key="..\:/xuhc/XuhcProject/AnimationExample/src/main/res/layout/activity_animation_example.xml" value="0.23369565217391305" />
         <entry key="..\:/xuhc/XuhcProject/AnimationExample/src/main/res/layout/activity_clean.xml" value="0.29936594202898553" />
         <entry key="..\:/xuhc/XuhcProject/AnimationExample/src/main/res/layout/activity_object_animator.xml" value="0.29936594202898553" />
+        <entry key="..\:/xuhc/XuhcProject/FloatingWindow/src/main/res/drawable/control_bar_back_bg.xml" value="0.1455" />
+        <entry key="..\:/xuhc/XuhcProject/FloatingWindow/src/main/res/drawable/control_bar_bg.xml" value="0.1455" />
+        <entry key="..\:/xuhc/XuhcProject/FloatingWindow/src/main/res/layout/activity_float_window.xml" value="0.29936594202898553" />
+        <entry key="..\:/xuhc/XuhcProject/FloatingWindow/src/main/res/layout/view_control_bar.xml" value="0.29936594202898553" />
+        <entry key="..\:/xuhc/XuhcProject/LiveData/src/main/res/layout/activity_live_data.xml" value="0.15287588294651866" />
         <entry key="..\:/xuhc/XuhcProject/MVVM/src/main/res/layout/activity_m_v_v_m.xml" value="0.15287588294651866" />
+        <entry key="..\:/xuhc/XuhcProject/MVVM/src/main/res/layout/fragment_expand.xml" value="0.29936594202898553" />
+        <entry key="..\:/xuhc/XuhcProject/MVVM/src/main/res/layout/fragment_expand2.xml" value="0.29936594202898553" />
+        <entry key="..\:/xuhc/XuhcProject/MVVM/src/main/res/layout/fragment_home.xml" value="0.29936594202898553" />
         <entry key="..\:/xuhc/XuhcProject/MVVM/src/main/res/layout/indiacator_point_view.xml" value="0.29936594202898553" />
         <entry key="..\:/xuhc/XuhcProject/MVVM/src/main/res/layout/linearlayout_indicator_view.xml" value="0.29936594202898553" />
         <entry key="..\:/xuhc/XuhcProject/Utils/src/main/res/layout/activity_utils.xml" value="0.23369565217391305" />
         <entry key="..\:/xuhc/XuhcProject/Utils/src/main/res/layout/fragment_crash.xml" value="0.29936594202898553" />
         <entry key="..\:/xuhc/XuhcProject/Utils/src/main/res/layout/fragment_utils.xml" value="0.23369565217391305" />
+        <entry key="..\:/xuhc/XuhcProject/ViewPager2/src/main/res/layout/activity_rg.xml" value="0.29936594202898553" />
+        <entry key="..\:/xuhc/XuhcProject/ViewPager2/src/main/res/layout/activity_ring.xml" value="0.29936594202898553" />
+        <entry key="..\:/xuhc/XuhcProject/ViewPager2/src/main/res/layout/activity_viewpager2.xml" value="0.29936594202898553" />
+        <entry key="..\:/xuhc/XuhcProject/ViewPager2/src/main/res/layout/fragment_test.xml" value="0.29936594202898553" />
+        <entry key="..\:/xuhc/XuhcProject/ViewPager2/src/main/res/layout/fragment_test2.xml" value="0.29936594202898553" />
+        <entry key="..\:/xuhc/XuhcProject/ViewPager2/src/main/res/layout/fragment_test3.xml" value="0.29936594202898553" />
+        <entry key="..\:/xuhc/XuhcProject/ViewPager2/src/main/res/layout/fragment_test4.xml" value="0.29936594202898553" />
       </map>
     </option>
   </component>
