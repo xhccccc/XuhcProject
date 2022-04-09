@@ -4,7 +4,9 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
+
+import com.xuhc.viewpager2.ringForFragment.custom.draw.Indicator;
 
 import java.lang.ref.WeakReference;
 
@@ -13,7 +15,9 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
-public class RingViewPager2 extends FrameLayout {
+public class RingViewPager2 extends RelativeLayout {
+
+    private static final int NORMAL_COUNT = 2;
 
     private ViewPager2 mViewPager2;
 
@@ -21,6 +25,8 @@ public class RingViewPager2 extends FrameLayout {
     private long autoTurningTime;
     private boolean isTurning = false;
     private AutoTurningRunnable mAutoTurningRunnable;
+
+    private Indicator indicator;
 
     public RingViewPager2(@NonNull Context context) {
         super(context);
@@ -50,6 +56,7 @@ public class RingViewPager2 extends FrameLayout {
         addView(mViewPager2);
     }
 
+
     private class RingOnPageChangeCallback extends ViewPager2.OnPageChangeCallback {
         private static final int INVALID_ITEM_POSITION = -1;
         private boolean isBeginPagerChange;
@@ -58,6 +65,9 @@ public class RingViewPager2 extends FrameLayout {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+            if (indicator != null) {
+                indicator.onPageScrolled(toRealPosition(position), positionOffset, positionOffsetPixels);
+            }
         }
 
         @Override
@@ -65,6 +75,9 @@ public class RingViewPager2 extends FrameLayout {
             super.onPageSelected(position);
             if (isBeginPagerChange) {
                 mTempPosition = position;
+                if (indicator != null) {
+                    indicator.onPageSelected(toRealPosition(position));
+                }
             }
         }
 
@@ -81,6 +94,9 @@ public class RingViewPager2 extends FrameLayout {
                     mTempPosition = INVALID_ITEM_POSITION;
                     setCurrentItem(fixCurrentItem, false);
                 }
+            }
+            if (indicator != null) {
+                indicator.onPageScrollStateChanged(state);
             }
 
         }
@@ -108,6 +124,10 @@ public class RingViewPager2 extends FrameLayout {
         }
         mViewPager2.setAdapter(adapter);
         setCurrentItem(1, false);
+
+        if (indicator != null) {
+            indicator.initIndicatorCount(getRealCount(), 1);
+        }
     }
 
     @Nullable
@@ -183,5 +203,46 @@ public class RingViewPager2 extends FrameLayout {
             }
         }
         return super.dispatchTouchEvent(ev);
+    }
+
+
+    public RingViewPager2 setIndicator(Indicator indicator) {
+        return setIndicator(indicator, true);
+    }
+
+    /**
+     * 设置indicator，支持在xml中创建
+     *
+     * @param attachToRoot true 添加到banner布局中
+     */
+    public RingViewPager2 setIndicator(Indicator indicator, boolean attachToRoot) {
+        if (this.indicator != null) {
+            removeView(this.indicator.getView());
+        }
+        if (indicator != null) {
+            this.indicator = indicator;
+            if (attachToRoot) {
+                addView(this.indicator.getView(), this.indicator.getParams());
+            }
+        }
+        return this;
+    }
+
+    private int toRealPosition(int position) {
+        int realPosition = 0;
+        if (getRealCount() > 1) {
+            realPosition = position - 1 % getRealCount();
+        }
+        if (realPosition < 0) {
+            realPosition += getRealCount();
+        }
+        return realPosition;
+    }
+
+    private int getRealCount() {
+        if (mViewPager2.getAdapter() != null) {
+            return mViewPager2.getAdapter().getItemCount() - NORMAL_COUNT;
+        }
+        return 0;
     }
 }

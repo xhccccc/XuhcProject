@@ -9,7 +9,7 @@
     <com.xuhc.viewpager2.ringForFragment.custom.RingViewPager2
         android:id="@+id/ring_vp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="500dp"/>
 
 
 

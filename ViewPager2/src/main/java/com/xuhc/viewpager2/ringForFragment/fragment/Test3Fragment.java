@@ -18,8 +18,19 @@ public class Test3Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Log.d("xhccc","Test3Fragment_onCreateView");
+        Log.d("xhccc","Test3Fragment_onCreateView : " + this);
         return inflater.inflate(R.layout.fragment_test3, container, false);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("xhccc","Test3Fragment_onResume: " + this);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Log.d("xhccc","Test3Fragment_onDestroyView: " + this);
+    }
 }
