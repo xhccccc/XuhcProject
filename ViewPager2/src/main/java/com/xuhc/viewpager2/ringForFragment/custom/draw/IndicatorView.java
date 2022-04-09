@@ -49,7 +49,7 @@ public class IndicatorView extends View implements Indicator {
     private float indicatorRatio = 1.0f;
     private float indicatorSelectedRadius = dip2px(3.5f);
     private float indicatorSelectedRatio = 1.0f;
-    private float indicatorSpacing = dip2px(10);
+    private float indicatorSpacing = dip2px(11);
     /*--------------- 核心控制点大小距离参数end ---------------*/
 
     @IntDef({IndicatorStyle.INDICATOR_CIRCLE,
@@ -101,6 +101,11 @@ public class IndicatorView extends View implements Indicator {
             params.bottomMargin = dip2px(10);
         }
         return params;
+    }
+
+    @Override
+    public void setCustomParams(RelativeLayout.LayoutParams params) {
+        this.params = params;
     }
 
     @Override

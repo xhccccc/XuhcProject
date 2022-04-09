@@ -28,6 +28,11 @@ public interface Indicator {
     RelativeLayout.LayoutParams getParams();
 
     /**
+     * Set RelativeLayout.LayoutParams
+     */
+    void setCustomParams(RelativeLayout.LayoutParams params);
+
+    /**
      * This method will be invoked when the current page is scrolled, either as part
      * of a programmatically initiated smooth scroll or a user initiated touch scroll.
      *
