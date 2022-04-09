@@ -373,6 +373,22 @@ public class IndicatorView extends View implements Indicator {
     }
 
     /*--------------- 下面是暴露的方法 ---------------*/
+    /**
+     * 设置indicator，支持在xml中创建
+     *
+     * @param attachToRoot true 添加到banner布局中
+     */
+    public void setIndicator(ViewGroup viewGroup, Indicator indicator, boolean attachToRoot) {
+        if (indicator != null) {
+            viewGroup.removeView(indicator.getView());
+        }
+        if (indicator != null) {
+            if (attachToRoot) {
+                viewGroup.addView(indicator.getView(), indicator.getParams());
+            }
+        }
+    }
+
 
     /**
      * 设置indicator的圆角，同时会改变选中时的圆角，default 3.5dp
