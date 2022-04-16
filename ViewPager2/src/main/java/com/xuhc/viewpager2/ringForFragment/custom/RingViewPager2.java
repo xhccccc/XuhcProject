@@ -231,7 +231,7 @@ public class RingViewPager2 extends RelativeLayout {
     private int toRealPosition(int position) {
         int realPosition = 0;
         if (getRealCount() > 1) {
-            realPosition = position - 1 % getRealCount();
+            realPosition = (position - 1) % getRealCount();
         }
         if (realPosition < 0) {
             realPosition += getRealCount();
