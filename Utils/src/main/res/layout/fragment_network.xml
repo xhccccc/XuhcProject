@@ -17,25 +17,16 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/bt_date_utils_activity"
+                android:id="@+id/bt_network_utils_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:text="日期时间工具类"/>
+                android:text="doNetWork"/>
 
-            <Button
-                android:id="@+id/bt_catch_crash"
+            <TextView
+                android:id="@+id/tv_network_utils_fragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="捕捉异常"/>
-
-            <Button
-                android:id="@+id/bt_network"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="网络工具"/>
+                android:layout_height="match_parent"/>
 
         </LinearLayout>
 

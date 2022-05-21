@@ -15,6 +15,7 @@ public class UtilsActivity extends AppCompatActivity implements View.OnClickList
 
         findViewById(R.id.bt_date_utils_activity).setOnClickListener(this);
         findViewById(R.id.bt_catch_crash).setOnClickListener(this);
+        findViewById(R.id.bt_network).setOnClickListener(this);
     }
 
     @Override
@@ -25,6 +26,8 @@ public class UtilsActivity extends AppCompatActivity implements View.OnClickList
             intent.setAction("com.xuhc.xuhcproject.DATE_TIME_UTIL");
         } else if (id == R.id.bt_catch_crash){
             intent.setAction("com.xuhc.xuhcproject.CATCH_CRASH");
+        } else if (id == R.id.bt_network){
+            intent.setAction("com.xuhc.xuhcproject.NET_WORK_UTIL");
         }
 
         startActivity(intent);
