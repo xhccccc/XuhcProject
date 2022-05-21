@@ -18,6 +18,7 @@ public class CustomViewTryActivity extends AppCompatActivity implements View.OnC
 
     private SwitchCompat mSwitchCompat;
     private SeekSettingView mSeekSettingView;
+    private VoicePlayingIcon mVoicePlayingIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class CustomViewTryActivity extends AppCompatActivity implements View.OnC
         mSwitchCompat = findViewById(R.id.switch_compat);
         mSwitchCompat.setOnCheckedChangeListener(this);
         mSeekSettingView = findViewById(R.id.custom_seek_bar);
+        mVoicePlayingIcon = findViewById(R.id.voice_playing_icon);
+        mVoicePlayingIcon.start();
 
         addListener();
     }
@@ -52,5 +55,11 @@ public class CustomViewTryActivity extends AppCompatActivity implements View.OnC
                 LogUtil.p(TAG,String.valueOf(value));
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mVoicePlayingIcon.stop();
     }
 }

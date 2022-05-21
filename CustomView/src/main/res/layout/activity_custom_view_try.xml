@@ -49,6 +49,17 @@
                 android:clickable="true"
                 app:left="@drawable/app_icon"/>
 
+            <com.xuhc.customview.VoicePlayingIcon
+                android:id="@+id/voice_playing_icon"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_gravity="center"
+                app:pointer_color="@color/black"
+                app:pointer_num="4"
+                app:pointer_rx="1dp"
+                app:pointer_ry="1dp"
+                app:pointer_width="@dimen/pointerWidth"/>
+
         </LinearLayout>
 
     </ScrollView>

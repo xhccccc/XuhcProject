@@ -12,14 +12,4 @@
         <item name="android:colorForeground">#e60000</item>
     </style>
 
-    <declare-styleable name="SeekSettingView">
-        <attr name="title" />
-        <attr name="value" />
-        <attr name="max_value" format="integer" />
-        <attr name="min_value" format="integer" />
-        <attr name="step" format="integer" />
-        <attr name="left" format="reference"/>
-        <attr name="right" format="reference"/>
-    </declare-styleable>
-
 </resources>
