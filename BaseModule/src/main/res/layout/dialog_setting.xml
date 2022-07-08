@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/pop_window_width"
+    android:layout_height="@dimen/pop_window_height"
+    android:background="@drawable/setting_pop_bg">
+
+    <ImageView
+        android:id="@+id/iv_textsize"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/ic_textsize" />
+    <TextView
+        android:id="@+id/tv_textsize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="文字大小"
+        android:layout_above="@+id/iv_textsize"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="23dp"
+        android:ems="1"/>
+
+    <com.xuhc.basemodule.MySeekBar
+        android:id="@+id/seekbar_textsize"
+        android:layout_width="wrap_content"
+        android:layout_height="240dp"
+        android:layout_above="@+id/iv_textsize"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/tv_textsize"
+        android:focusable="false"
+        android:max="60"
+        android:maxHeight="1dp"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        android:progressDrawable="@drawable/seekbar_bg"
+        android:thumb="@drawable/ic_dot" />
+
+    <ImageView
+        android:id="@+id/iv_play"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="38dp"
+        android:layout_toEndOf="@+id/iv_textsize"
+        android:background="@drawable/ic_textplayer" />
+    <TextView
+        android:id="@+id/tv_playspeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="播放速度"
+        android:layout_above="@+id/iv_play"
+        android:layout_toEndOf="@id/tv_textsize"
+        android:layout_marginStart="61dp"
+        android:layout_marginBottom="23dp"
+        android:ems="1"/>
+
+    <com.xuhc.basemodule.MySeekBar
+        android:id="@+id/seekbar_playspeed"
+        android:layout_width="wrap_content"
+        android:layout_height="240dp"
+        android:layout_above="@id/iv_play"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/tv_playspeed"
+        android:focusable="false"
+        android:max="2"
+        android:maxHeight="1dp"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        android:progressDrawable="@drawable/seekbar_bg"
+        android:thumb="@drawable/ic_dot" />
+
+
+</RelativeLayout>

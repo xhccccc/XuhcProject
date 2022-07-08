@@ -10,4 +10,8 @@
     <dimen name="quit_dialog_btn_text_size">17sp</dimen>
     <dimen name="quit_dialog_btn_margin_start">20dp</dimen>
     <dimen name="quit_dialog_btn_and_btn_margin_start">66dp</dimen>
+
+
+    <dimen name="pop_window_width">180dp</dimen>
+    <dimen name="pop_window_height">360dp</dimen>
 </resources>
