@@ -25,7 +25,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             String channelId = "chat";
             String channelName = "聊天消息";
-            int importance = NotificationManager.IMPORTANCE_HIGH;
+            int importance = NotificationManager.IMPORTANCE_LOW;
             createNotificationChannel(channelId, channelName, importance);
 
             channelId = "subscribe";
@@ -42,7 +42,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
         int id = v.getId();
         if (id == R.id.send_notification){
             sendChatMsg();
-            sendSubscribeMsg();
+//            sendSubscribeMsg();
         }
     }
 
