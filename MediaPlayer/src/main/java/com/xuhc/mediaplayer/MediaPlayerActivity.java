@@ -1,10 +1,15 @@
 package com.xuhc.mediaplayer;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.xuhc.mediaplayer.surface.SurfaceViewActivity;
@@ -16,13 +21,19 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
 
 public class MediaPlayerActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final String[] STORAGE_PERMISSIONS = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+    ActivityResultLauncher<String[]> requestPermissionActivityResultLauncher_multiple;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_player);
+
+        initActivityResult();
+        requestPermissionActivityResultLauncher_multiple.launch(STORAGE_PERMISSIONS);
 
         findViewById(R.id.bt_texture_view).setOnClickListener(this);
         findViewById(R.id.bt_surface_view).setOnClickListener(this);
@@ -39,7 +50,8 @@ public class MediaPlayerActivity extends AppCompatActivity implements View.OnCli
             startActivity(intent);
         } else if (id == R.id.bt_surface_view){
             Intent intent = new Intent(this, SurfaceViewActivity.class);
-            intent.putExtra("filePath", getAssetsCacheFile(this,"dy1.mp4"));
+//            intent.putExtra("filePath", getAssetsCacheFile(this,"4ktest.ts"));
+            intent.putExtra("filePath", "/storage/emulated/0/2885/samba/ts/5.ts");
             startActivity(intent);
         } else if (id == R.id.bt_video_view){
             Intent intent = new Intent(this, VideoViewActivity.class);
@@ -72,5 +84,19 @@ public class MediaPlayerActivity extends AppCompatActivity implements View.OnCli
             e.printStackTrace();
         }
         return cacheFile.getAbsolutePath();
+    }
+
+    public void initActivityResult(){
+
+
+        //多个申请回调
+        ActivityResultContracts.RequestMultiplePermissions requestMultiplePermission  = new ActivityResultContracts.RequestMultiplePermissions();
+        requestPermissionActivityResultLauncher_multiple = registerForActivityResult(requestMultiplePermission, new ActivityResultCallback<Map<String, Boolean>>() {
+            @Override
+            public void onActivityResult(Map<String, Boolean> result) {
+                Log.d("xhccc", "Multiple_ActivityResultContracts_onActivityResult: " + result.toString());
+//                tvPermissionTip.setText(result.toString());
+            }
+        });
     }
 }

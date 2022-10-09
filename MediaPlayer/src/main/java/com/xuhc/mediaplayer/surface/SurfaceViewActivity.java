@@ -49,6 +49,8 @@ public class SurfaceViewActivity extends AppCompatActivity implements MediaPlaye
         setContentView(R.layout.activity_surface_view);
         filePath = getIntent() != null ? getIntent().getStringExtra("filePath") : null;
 
+        Log.d(TAG,"filePath: " + filePath);
+
         surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
         // 设置surfaceHolder
         surfaceHolder = surfaceView.getHolder();
