@@ -11,6 +11,8 @@ public class ControlBar extends BaseControlBar {
 
     private OnControlBarClickListener mOnControlBarClickListener;
 
+    private boolean isCanMove = true;
+
     public void setOnControlBarClickListener(OnControlBarClickListener onControlBarClickListener) {
         mOnControlBarClickListener = onControlBarClickListener;
     }
@@ -25,6 +27,11 @@ public class ControlBar extends BaseControlBar {
 
     public ControlBar(Context context) {
         super(context);
+    }
+
+    public ControlBar(Context context, boolean isCanMove) {
+        super(context);
+        this.isCanMove = isCanMove;
     }
 
     @Override
@@ -87,12 +94,15 @@ public class ControlBar extends BaseControlBar {
                 }
             }
         });
-        backBtn.setOnTouchListener(new FloatingOnTouchListener(this));
-        killBtn.setOnTouchListener(new FloatingOnTouchListener(this));
-        arrowBtn.setOnTouchListener(new FloatingOnTouchListener(this));
-        magnifyBtn.setOnTouchListener(new FloatingOnTouchListener(this));
-        quitBtn.setOnTouchListener(new FloatingOnTouchListener(this));
-        setOnTouchListener(new FloatingOnTouchListener(this));
+
+        if (isCanMove) {
+            backBtn.setOnTouchListener(new FloatingOnTouchListener(this));
+            killBtn.setOnTouchListener(new FloatingOnTouchListener(this));
+            arrowBtn.setOnTouchListener(new FloatingOnTouchListener(this));
+            magnifyBtn.setOnTouchListener(new FloatingOnTouchListener(this));
+            quitBtn.setOnTouchListener(new FloatingOnTouchListener(this));
+            setOnTouchListener(new FloatingOnTouchListener(this));
+        }
     }
 
     @Override

@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.PixelFormat;
 import android.os.Build;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -30,6 +29,7 @@ public abstract class BaseControlBar extends RelativeLayout {
     public static final int ORIENTATION_LEFT = 0;
     public static final int ORIENTATION_RIGHT = 1;
     public static final int SINGLE_CLICK_MAX_SCOPE = 2;
+    private OnSideBarTouchListener mOnSideBarTouchListener;
 
     public BaseControlBar(Context context) {
         super(context);
@@ -73,7 +73,9 @@ public abstract class BaseControlBar extends RelativeLayout {
         mLayoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION;
         mLayoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
                 | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR
-                | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
+                | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
+                | WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH;
+        ;
         mLayoutParams.format = PixelFormat.RGBA_8888;
         mLayoutParams.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
         mLayoutParams.windowAnimations = android.R.style.Animation_Dialog;
@@ -102,7 +104,14 @@ public abstract class BaseControlBar extends RelativeLayout {
 
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
+            if (mOnSideBarTouchListener != null) {
+                mOnSideBarTouchListener.onTouch();
+            }
             switch (motionEvent.getAction()) {
+                case MotionEvent.ACTION_OUTSIDE:
+                    if (mOnSideBarTouchListener != null) {
+                        mOnSideBarTouchListener.onTouchOutSide();
+                    }
                 case MotionEvent.ACTION_DOWN:
                     mIsSingleTapUp = true;
                     startX = (int) motionEvent.getRawX();
@@ -191,11 +200,11 @@ public abstract class BaseControlBar extends RelativeLayout {
             valueAnimator.start();
 
             //不让小球拖动到状态栏位置
-            if (getWindowLayoutParams().y < 0){
+            if (getWindowLayoutParams().y < 0) {
                 int endY;
                 int startY = getWindowLayoutParams().y;
                 if (Math.abs(getWindowLayoutParams().y) + getStatusBarHeight() > getResources().getDisplayMetrics().heightPixels / 2) {
-                    endY = - (getResources().getDisplayMetrics().heightPixels / 2) + getStatusBarHeight()  + getNavigationBarHeight(mContext);
+                    endY = -(getResources().getDisplayMetrics().heightPixels / 2) + getStatusBarHeight() + getNavigationBarHeight(mContext);
                     ValueAnimator valueAnimatorY = new ValueAnimator();
                     valueAnimatorY.setIntValues(startY, endY);
                     valueAnimatorY.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -229,7 +238,7 @@ public abstract class BaseControlBar extends RelativeLayout {
         }
     }
 
-    public void setPosition(int directionForOther,int lastY) {
+    public void setPosition(int directionForOther, int lastY) {
         direction = directionForOther;
         getWindowLayoutParams().y = lastY;
         if (direction == ORIENTATION_LEFT) {
@@ -250,9 +259,8 @@ public abstract class BaseControlBar extends RelativeLayout {
 
     /**
      * 获取状态栏高度
-     *
      */
-    private int getStatusBarHeight(){
+    private int getStatusBarHeight() {
         int statusBarHeight = -1;
         //获取status_bar_height资源的ID
         int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -263,7 +271,9 @@ public abstract class BaseControlBar extends RelativeLayout {
         return statusBarHeight;
     }
 
-    //获取虚拟按键的高度
+    /**
+     * 获取虚拟按键的高度
+     */
     public static int getNavigationBarHeight(Context context) {
         int result = 0;
         if (hasNavBar(context)) {
@@ -302,7 +312,6 @@ public abstract class BaseControlBar extends RelativeLayout {
 
     /**
      * 判断虚拟按键栏是否重写
-     *
      */
     private static String getNavBarOverride() {
         String sNavBarOverride = null;
@@ -316,6 +325,22 @@ public abstract class BaseControlBar extends RelativeLayout {
             }
         }
         return sNavBarOverride;
+    }
+
+    public void setOnSideBarTouchListener(OnSideBarTouchListener onSideBarTouchListener) {
+        mOnSideBarTouchListener = onSideBarTouchListener;
+    }
+
+    public interface OnSideBarTouchListener {
+        /**
+         * 点击触摸了window内部的回调
+         */
+        void onTouch();
+
+        /**
+         * 点击了window外部的回调
+         */
+        void onTouchOutSide();
     }
 
 }

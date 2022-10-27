@@ -6,9 +6,15 @@ import android.widget.RelativeLayout;
 public class ControlSmallBar extends BaseControlBar {
 
     private RelativeLayout arrowBtn;
+    private boolean isCanMove = true;
 
     public ControlSmallBar(Context context) {
         super(context);
+    }
+
+    public ControlSmallBar(Context context, boolean isCanMove) {
+        super(context);
+        this.isCanMove = isCanMove;
     }
 
     @Override
@@ -25,7 +31,9 @@ public class ControlSmallBar extends BaseControlBar {
 
     private void addListener() {
         arrowBtn = findViewById(R.id.small_control_bar_arrow);
-        setOnTouchListener(new FloatingOnTouchListener(this));
+        if (isCanMove) {
+            setOnTouchListener(new FloatingOnTouchListener(this));
+        }
     }
 
     @Override
