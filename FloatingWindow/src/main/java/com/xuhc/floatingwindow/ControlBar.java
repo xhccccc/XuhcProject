@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 
-public class ControlBar extends BaseControlBar {
+public class ControlBar extends BaseControlBar implements BaseControlBar.OnSideBarTouchListener {
 
     private ImageView backBtn,killBtn,arrowBtn,magnifyBtn,quitBtn;
 
@@ -17,12 +17,36 @@ public class ControlBar extends BaseControlBar {
         mOnControlBarClickListener = onControlBarClickListener;
     }
 
+    @Override
+    public void onTouch() {
+        if (mOnControlBarClickListener != null) {
+            mOnControlBarClickListener.onTouch();
+        }
+    }
+
+    @Override
+    public void onTouchOutSide() {
+        if (mOnControlBarClickListener != null) {
+            mOnControlBarClickListener.onTouchOutSide();
+        }
+    }
+
     public interface OnControlBarClickListener{
         void backEvent();
         void killEvent();
         void rightArrowEvent();
         void magnifyEvent();
         void quitEvent();
+
+        /**
+         * 点击触摸了
+         */
+        void onTouch();
+
+        /**
+         * 点击触摸了窗口外部
+         */
+        void onTouchOutSide();
     }
 
     public ControlBar(Context context) {

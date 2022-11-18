@@ -68,6 +68,16 @@ public class SideBar {
                 public void quitEvent() {
                     //do what you want to do
                 }
+
+                @Override
+                public void onTouch() {
+
+                }
+
+                @Override
+                public void onTouchOutSide() {
+
+                }
             });
             mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
             mWindowManager.addView(mControlBar, mControlBar.getWindowLayoutParams());
