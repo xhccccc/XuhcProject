@@ -18,6 +18,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.xuhc.getcontent.GetContentActivity;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.xhc.xhcnote.NoteMainActivity;
@@ -142,6 +143,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
         mList.add("MVVMDemo");
         mList.add("MediaPlayer");
         mList.add("AnimationExample");
+        mList.add("GetContent");
     }
 
     private void initView() {
@@ -236,6 +238,9 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 break;
             case 24:
                 startActivity(new Intent(this, AnimationExampleActivity.class));
+                break;
+            case 25:
+                startActivity(new Intent(this, GetContentActivity.class));
                 break;
         }
     }

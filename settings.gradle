@@ -25,3 +25,4 @@ include ':DrawBoard'
 include ':XuhcRecyclerView'
 include ':app'
 rootProject.name = "XuhcProject"
+include ':GetContent'

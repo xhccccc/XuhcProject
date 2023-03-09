@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/FileOperations" />
             <option value="$PROJECT_DIR$/FloatingWindow" />
             <option value="$PROJECT_DIR$/Fragment" />
+            <option value="$PROJECT_DIR$/GetContent" />
             <option value="$PROJECT_DIR$/GlideTry" />
             <option value="$PROJECT_DIR$/GreenDaoTry" />
             <option value="$PROJECT_DIR$/LiveData" />
@@ -38,7 +39,6 @@
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
