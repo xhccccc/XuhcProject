@@ -26,3 +26,4 @@ include ':XuhcRecyclerView'
 include ':app'
 rootProject.name = "XuhcProject"
 include ':GetContent'
+include ':Camera'

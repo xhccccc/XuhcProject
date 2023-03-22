@@ -18,6 +18,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.xuhc.camera.CameraActivity;
 import com.xuhc.getcontent.GetContentActivity;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -144,6 +145,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
         mList.add("MediaPlayer");
         mList.add("AnimationExample");
         mList.add("GetContent");
+        mList.add("Camera");
     }
 
     private void initView() {
@@ -241,6 +243,11 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 break;
             case 25:
                 startActivity(new Intent(this, GetContentActivity.class));
+                break;
+            case 26:
+                startActivity(new Intent(this, CameraActivity.class));
+                break;
+            default:
                 break;
         }
     }
